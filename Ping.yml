@@ -1,11 +1,26 @@
 ---
-- hosts: all
+- hosts: webservers
   become: yes
   tasks:
-  - name: i am pinging to all 
-    ping:
-
-  - name: i am going install tree
+  - name: install webserver on ubuntu16 node
     apt:
-      name: tree
+      name: "{{ webserveronUbuntu }}"
       state: present
+    when: ansible_os_family =="Debian"
+
+  - name:  start webserver of ubuntu16
+    service:
+      name: "{{ webserveronUbuntu }}"
+      state: started
+    when: ansible_os_family =="Debian"
+
+  - name: install webserver on amazan
+    yum:
+      name: "{{ webserveronamazon }}"
+      state: present
+    when: ansible_os_family =="RedHat"
+  - name: start webserver of amazan
+    service:
+      name: "{{ webserveronamazon }}"
+      state: started
+    when: ansible_os_family =="RedHat"
