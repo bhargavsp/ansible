@@ -1,10 +1,11 @@
 ---
--hosts: hosts
-become: yes
-tasks:
-  - name: install tree
-    apt:
-     name: tree
-     status: present
+- hosts: all
+  become: yes
+  tasks:
+  - name: i am pinging to all 
+    ping:
 
- 
+  - name: i am going install tree
+    apt:
+      name: tree
+      state: present
