@@ -2,7 +2,9 @@
 -hosts: hosts
 become: yes
 tasks:
-  - name: i am pinging
-    ping:
+  - name: install tree
+    apt:
+     name: tree
+     status: present
 
  
