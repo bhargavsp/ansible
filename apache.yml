@@ -1,0 +1,7 @@
+---
+- hosts: all
+  become: all
+  tasks:
+  - name: i want to install
+    apt:
+    - name: 
