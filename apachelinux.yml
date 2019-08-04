@@ -4,7 +4,7 @@
   tasks:
 
 - name: install webserver
-  yum:
+  apt:
     name: httpd
     state: present
 - name: run webserver
