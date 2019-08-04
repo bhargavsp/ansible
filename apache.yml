@@ -1,9 +1,9 @@
 ---
-- hosts: all
+- hosts: ubuntu
   become: yes
   tasks:
   - name: install webserver
-    yum:
+    apt:
      name: apache2
      state: present
   - name: start webserver
