@@ -2,11 +2,11 @@
 - hosts: linux
   become: yes
   tasks:
-- name: install webserver on amazon
-  yum:
+- name: install webserver
+  yum: 
     name: httpd
     state: present
-- name: start webserver on amazon
+- name: start webserver
   service:
     name: httpd
     state: started
