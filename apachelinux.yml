@@ -6,7 +6,7 @@
   yum:
     name: httpd
     state: present
-- name: start webserver
+- name: start webserver on amazon
   service:
     name: httpd
     state: started
