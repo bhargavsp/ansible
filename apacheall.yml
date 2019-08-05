@@ -2,8 +2,8 @@
 - hosts: webservers
   become: yes
   tasks:
-    - name: install apache on webserver ubuntu
-      apt: 
+    - name: install webserver
+      apt:
        name: apache2
        state: present
     - name: start webserver
@@ -11,8 +11,8 @@
         name: apache2
         state: start
    
-    - name: install apache on webserver linux
-      yum: 
+    - name: install webserver
+      yum:
         name: httpd
         state: present
     - name: start webserver
@@ -20,8 +20,8 @@
         name: apache2
         state: start
    
-    - name: install apache on webserver linux
-      yum: 
+    - name: install webserver
+      yum:
         name: httpd
         state: present
     - name: start webserver
