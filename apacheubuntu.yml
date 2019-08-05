@@ -5,31 +5,31 @@
  
   - name: install webserver
     yum:
-      name: httpd
+      name: "{{webserveronamazon}}"
       state: present
   - name: start webserver
     service:
-      name: httpd
+      name: "{{webserveronamazon}}"
       state: started
     when: ansible_os_family =="amazon"
 
   - name: install webserver
     yum:
-      name: httpd
+      name: "{{webserveronamazon}}"
       state: present
   - name: start webserver
     service:
-      name: httpd
+      name: "{{webserveronamazon}}"
       state: started
     when: ansible_os_family =="RedHat"
   
   - name: install webserver
     apt:
-      name: apache2
+      name: "{{webserveronubuntu}}"
       state: present
   - name: start webserver
     service:
-      name: apache2
+      name: "{{webserveronubuntu}}"
       state: started
     when: ansible_os_family =="Debian"
 
