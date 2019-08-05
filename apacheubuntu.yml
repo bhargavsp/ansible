@@ -20,15 +20,5 @@
     service:
       name: "{{webserveronamazon}}"
       state: started
-   
-  - name: install webserver
-    apt:
-      name: "{{webserveronubuntu}}"
-      state: present
-  - name: start webserver
-    service:
-      name: "{{webserveronubuntu}}"
-      state: started
-
     
 
