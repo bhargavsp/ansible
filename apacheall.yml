@@ -6,23 +6,25 @@
       apt: 
        name: apache2
        state: present
-    - name: run webserver
+    - name: start webserver
       service:
         name: apache2
         state: start
+   
     - name: install apache on webserver linux
       yum: 
         name: httpd
         state: present
-    - name: run webserver
+    - name: start webserver
       service:
         name: apache2
         state: start
+   
     - name: install apache on webserver linux
       yum: 
         name: httpd
         state: present
-    - name: run webserver
+    - name: start webserver
       service:
         name: apache2
         state: start
