@@ -1,5 +1,5 @@
 ---
-- hosts: redhat
+- hosts: amazon
   become: yes
   tasks:
  
