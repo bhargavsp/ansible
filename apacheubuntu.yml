@@ -1,5 +1,5 @@
 ---
-- hosts: swapna
+- hosts: webservers
   become: yes
   tasks:
   - name: install webserver
@@ -14,4 +14,3 @@
     apt:
        name: tree
        state: present
-        
