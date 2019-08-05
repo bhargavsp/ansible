@@ -12,20 +12,10 @@
       name: apache2
       state: started
 
-  - name: install webserver
-    yum:
-      name: httpd
+  - name: install tree
+    apt:
+      name: tree
       state: present
-  - name: start webserver
-    service:
-      name: httpd
-      state: started
+
     
-  - name: install webserver
-    yum:
-      name: httpd
-      state: present
-  - name: start webserver
-    service:
-      name: httpd
-      state: started
+
