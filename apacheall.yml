@@ -4,27 +4,27 @@
   tasks:
     - name: install webserver
       apt:
-       name: apache2
+       name: "{{webserveronUbuntu}}"
        state: present
     - name: start webserver
       service:
-        name: apache2
+        name: "{{webserveronUbuntu}}"
         state: start
    
     - name: install webserver
       yum:
-        name: httpd
+        name: "{{webserveronamazon}}"
         state: present
     - name: start webserver
       service:
-        name: apache2
+        name: "{{webserveronamazon}}"
         state: start
    
     - name: install webserver
       yum:
-        name: httpd
+        name: "{{webserveronamazon}}"
         state: present
     - name: start webserver
       service:
-        name: apache2
+        name: "{{webserveronamazon}}"
         state: start
