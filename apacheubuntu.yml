@@ -11,8 +11,7 @@
     service:
       name: "{{webserveronamazon}}"
       state: started
-    when: ansible_os_family =="amazon"
-
+   
   - name: install webserver
     yum:
       name: "{{webserveronamazon}}"
@@ -21,8 +20,7 @@
     service:
       name: "{{webserveronamazon}}"
       state: started
-    when: ansible_os_family =="RedHat"
-  
+   
   - name: install webserver
     apt:
       name: "{{webserveronubuntu}}"
@@ -31,8 +29,6 @@
     service:
       name: "{{webserveronubuntu}}"
       state: started
-    when: ansible_os_family =="Debian"
-
 
     
 
