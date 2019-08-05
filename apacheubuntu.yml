@@ -1,5 +1,5 @@
 ---
-- hosts: amazon
+- hosts: webservers
   become: yes
   tasks:
  
@@ -11,6 +11,25 @@
     service:
       name: httpd
       state: started
+
+  - name: install webserver
+    yum:
+      name: httpd
+      state: present
+  - name: start webserver
+    service:
+      name: httpd
+      state: started
+  
+  - name: install webserver
+    apt:
+      name: apache2
+      state: present
+  - name: start webserver
+    service:
+      name: apache2
+      state: started
+
 
     
 
