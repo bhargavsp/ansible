@@ -12,7 +12,7 @@
         state: start
     - name: install apache on webserver linux
       yum: 
-        name: apache2
+        name: httpd
         state: present
     - name: run webserver
       service:
@@ -20,7 +20,7 @@
         state: start
     - name: install apache on webserver linux
       yum: 
-        name: apache2
+        name: httpd
         state: present
     - name: run webserver
       service:
