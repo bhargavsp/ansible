@@ -2,29 +2,29 @@
 - hosts: webservers
   become: yes
   tasks:
-    - name: install webserver
+    - name: install webserver on ubuntu18
       apt:
        name: "{{webserveronUbuntu}}"
        state: present
-    - name: start webserver
+    - name: start webserver on ubuntu18
       service:
         name: "{{webserveronUbuntu}}"
         state: start
    
-    - name: install webserver
+    - name: install webserver on amazon
       yum:
         name: "{{webserveronamazon}}"
         state: present
-    - name: start webserver
+    - name: start webserver on amazon
       service:
         name: "{{webserveronamazon}}"
         state: start
    
-    - name: install webserver
+    - name: install webserver on RedHat
       yum:
         name: "{{webserveronamazon}}"
         state: present
-    - name: start webserver
+    - name: start webserver on RedHat
       service:
         name: "{{webserveronamazon}}"
         state: start
