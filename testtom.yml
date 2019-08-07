@@ -1,5 +1,5 @@
 ---
-- hosts: linux
+- hosts: redhat
   become: yes
   roles:
-    - {role: testtom}
+    - {role: testtom, when: ansible_os_family =="RedHat"}
