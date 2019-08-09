@@ -1,0 +1,17 @@
+---
+- hosts: localhost
+  become: yes
+  tasks:
+  - name: create ansible nodes
+    ec2:
+      key_name: 1key
+      instance_type: t2.micro
+      image: ami-003551bdd20f23f82
+      wait: yes
+      region: us-east-1a
+      group: testansible
+      count: 2
+      vpc_subnet_id: subnet-696c3047
+      assign_public_ip: yes
+      instance_tags:
+        Name: testnodes
