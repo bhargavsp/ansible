@@ -1,5 +1,5 @@
 ---
-- hosts: RedHat
+- hosts: ubuntu
   become: yes
   roles:
-    - {role: tom7, when: ansible_os_family=="RedHat"}
+    - {role: tom7, when: ansible_os_family=="Debian"}
