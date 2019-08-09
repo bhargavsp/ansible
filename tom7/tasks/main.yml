@@ -23,7 +23,7 @@
 
 - name: copy tomuser file into nodes 
   template:
-    src: templates/mytomusers.j2
+    src:  templates/mytomusers.j2
     dest: /etc/tomcat7/tomcat-users.xml
   notify: restarttomcat
 
