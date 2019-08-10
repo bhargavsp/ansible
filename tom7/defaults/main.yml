@@ -1,2 +1,30 @@
 ---
 # defaults file for tom7
+
+- name: install tomcat
+  apt:
+    name: tomcat7
+    state: present
+
+- name: copy config files
+  template:
+    src: templates/tomconfig.j2
+    dest: /etc/default/tomcat7
+  notify: restarttomcat
+  
+- name: install aditional files
+  apt:
+    name: "{{item}}"
+    state: present
+  loop: 
+    - tomcat7-docs
+    - tomcat7-admin
+    - tomcat7-examples
+
+- name: copy user files
+  template:
+    src: templates/tomusers.j2
+    dest: /etc/tomcat7/tomcat-users.xml
+  notify: restarttomcat
+
+
