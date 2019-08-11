@@ -4,13 +4,13 @@
   tasks:
   - name: create ansible nodes
     ec2:
-      key_name: 1key
+      key_name: key
       instance_type: t2.micro
-      image: ami-003551bdd20f23f82
+      image: ami-00d4e9ff62bc40e03
       wait: yes
       region: us-east-1a
-      group: testansible
-      count: 2
+      group: default
+      count: 1
       vpc_subnet_id: subnet-696c3047
       assign_public_ip: yes
       instance_tags:
