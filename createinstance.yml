@@ -1,17 +1,18 @@
 ---
 - hosts: localhost
-  become: yes
   tasks:
   - name: create ansible nodes
     ec2:
+      aws_access_key_id: AKA36MFOB5OSHEKY4H5
+      aws_secret_access_key: FpUX15/pttku1/Qfj9pac9fjPLBBK0+raipVp4ep
       key_name: key
       instance_type: t2.micro
       image: ami-00d4e9ff62bc40e03
       wait: yes
-      region: us-east-1a
+      region: us-east-1
       group: default
-      count: 1
-      vpc_subnet_id: subnet-696c3047
+      count: 2
+      vpc_subnet_id: subnet-aa3869cd
       assign_public_ip: yes
       instance_tags:
-        Name: testnodes
+        name: testnodes
