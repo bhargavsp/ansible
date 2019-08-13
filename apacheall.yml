@@ -6,6 +6,7 @@
       yum:
        name: "{{webserveronLinux}}"
        state: present
+      ignore_errors: yes
     - name: start webserver on Linux
       service:
         name: "{{webserveronLinux}}"
