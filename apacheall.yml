@@ -11,6 +11,7 @@
         name: "{{webserveronLinux}}"
         state: start
       when: ansible_os_family=="Linux"
+      ignore_errors: yes
 
     - name: install webserver on RedHat
       yum:
