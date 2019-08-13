@@ -1,0 +1,4 @@
+key= value
+
+webserveronLinux= httpd
+webserveronamazon= httpd

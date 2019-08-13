@@ -2,24 +2,16 @@
 - hosts: webservers
   become: yes
   tasks:
-    - name: install webserver on ubuntu18
-      apt:
-       name: "{{webserveronUbuntu}}"
+    - name: install webserver on Linux
+      yum:
+       name: "{{webserveronLinux}}"
        state: present
     - name: start webserver on ubuntu18
       service:
-        name: "{{webserveronUbuntu}}"
+        name: "{{webserveronLinux}}"
         state: start
-   
-    - name: install webserver on amazon
-      yum:
-        name: "{{webserveronamazon}}"
-        state: present
-    - name: start webserver on amazon
-      service:
-        name: "{{webserveronamazon}}"
-        state: start
-   
+      when: ansible_os_family=="Linux"
+
     - name: install webserver on RedHat
       yum:
         name: "{{webserveronamazon}}"
@@ -28,3 +20,4 @@
       service:
         name: "{{webserveronamazon}}"
         state: start
+      when: ansible_os_family =="RedHat"
