@@ -14,12 +14,12 @@
       when: ansible_os_family=="Linux"
       ignore_errors: yes
 
-    - name: install webserver on RedHat
+    - name: install webserver on amazon
       yum:
         name: "{{webserveronamazon}}"
         state: present
       when: ansible_os_family =="RedHat"
-    - name: start webserver on RedHat
+    - name: start webserver on amazon
       service:
         name: "{{webserveronamazon}}"
         state: start
