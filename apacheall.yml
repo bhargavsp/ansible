@@ -6,7 +6,7 @@
       yum:
        name: "{{webserveronLinux}}"
        state: present
-    - name: start webserver on ubuntu18
+    - name: start webserver on Linux
       service:
         name: "{{webserveronLinux}}"
         state: start
